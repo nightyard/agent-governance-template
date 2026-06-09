@@ -1,0 +1,26 @@
+{
+  "projectName": "[PROJECT_NAME]",
+  "defaultBranch": "[DEFAULT_BRANCH]",
+  "agentGovernanceManifest": "KIT_MANIFEST.json",
+  "packageManager": "[npm|pnpm|yarn|uv|poetry|cargo|go|other]",
+  "primaryRuntime": "[node|python|other]",
+  "verificationCommands": {
+    "docs": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify-agent-governance.ps1",
+    "types": "[project typecheck command]",
+    "tests": "[project test command]",
+    "build": "[project build command]",
+    "dependencies": "[project dependency audit command]"
+  },
+  "riskOwners": {
+    "production": "[owner]",
+    "security": "[owner]",
+    "data": "[owner]",
+    "billing": "[owner]",
+    "dependencies": "[owner]"
+  },
+  "externalToolPolicy": {
+    "allowPublicWebResearch": true,
+    "allowPrivateDataToExternalTools": false,
+    "allowDelegateEditsByDefault": false
+  }
+}

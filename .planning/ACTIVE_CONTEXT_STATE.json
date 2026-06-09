@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "artifact_id": "ACTIVE-CONTEXT-STATE",
+  "last_updated": "[YYYY-MM-DD]",
+  "source_markdown": ".planning/ACTIVE_CONTEXT.md",
+  "purpose": "Machine-readable startup state for broad/current-state work. Agents should use this for posture, blockers, gated work, and safe next-action routing, then open ACTIVE_CONTEXT.md only when human-readable context or source-map detail is needed.",
+  "project_posture": {
+    "primary_goal": "[fill in]",
+    "current_phase": "[fill in]",
+    "production_status": "not_approved_until_domain_gates_say_otherwise",
+    "source_anchor": "docs/PROJECT_CONTEXT.md"
+  },
+  "active_blockers": [],
+  "safe_next_actions": [],
+  "gated_work": {
+    "source_anchor": "docs/DOMAIN_GATES.md",
+    "must_not_open_without_approval": [
+      "production_deploy",
+      "customer_data_write",
+      "payment_or_billing_change",
+      "destructive_migration",
+      "credential_or_secret_change",
+      "external_user_notification"
+    ]
+  },
+  "worktree_caveats": {
+    "preserve_dirty_work": true,
+    "stage_explicit_paths_only": true
+  },
+  "verification": [
+    "[project verification command]"
+  ]
+}

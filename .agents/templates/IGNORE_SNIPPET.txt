@@ -1,0 +1,24 @@
+# Search/index hygiene for ripgrep-style .ignore files.
+# Keep hot agent entrypoints visible. Hide generated proof/runtime output.
+
+.planning/*_SPEC.md
+.planning/browser-evidence/
+.planning/orchestrator-bundles/
+.planning/dev-server-logs/
+.planning/artifacts/
+agent-handoffs/
+artifacts/
+.next/
+coverage/
+playwright-report/
+test-results/
+
+# Do not ignore:
+# AGENTS.md
+# CLAUDE.md
+# GEMINI.md
+# .agents/rules/rules.md
+# .agents/workflows/agent-onboarding.md
+# .planning/ACTIVE_CONTEXT.md
+# .planning/ACTIVE_CONTEXT_STATE.json
+# .planning/llm-wiki/index.md

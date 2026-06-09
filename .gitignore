@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Local proof installs and generated working artifacts.
+.tmp/
+tmp/
+.planning/artifacts/
+.planning/checkpoints/*.local.json
