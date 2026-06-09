@@ -17,6 +17,18 @@ Use it to give agents:
 
 ## Install
 
+### Agent-Assisted Install
+
+If an AI agent is doing the install, give it this repo link and tell it to follow `docs/AGENTIC_INSTALL_GUIDE.md`. It should run the discovery script against the target workspace first, infer what it can from existing rules/docs/tooling, then ask only for the missing decisions.
+
+Short prompt:
+
+```text
+Clone https://github.com/nightyard/agent-governance-template and follow docs/AGENTIC_INSTALL_GUIDE.md. Run scripts/discover-workspace.ps1 against this workspace before installing. Infer project name, branch, package manager, verification commands, and existing agent rules from the repo. Ask me only for missing domain gates, owners, private-data rules, current posture, and conflict decisions. Do not use -Force without exact path approval.
+```
+
+### Manual Install
+
 From a cloned copy:
 
 ```powershell

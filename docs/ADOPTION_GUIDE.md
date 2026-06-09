@@ -4,7 +4,19 @@ Last verified: [YYYY-MM-DD]
 
 Use this once when installing the kit into a new repository, then keep `AGENTS.md` and the governing docs current.
 
-## 1. Install
+## 1. Agentic Preflight
+
+When an AI agent is doing the install, start with `docs/AGENTIC_INSTALL_GUIDE.md`.
+
+From the kit folder, run discovery against the target repo before copying files:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\discover-workspace.ps1 -TargetRoot "C:\path\to\repo"
+```
+
+The installing agent should read the generated `.planning/onboarding/workspace-discovery.local.json`, infer what it can from existing rules/docs/tooling, and ask the user only for missing decisions.
+
+## 2. Install
 
 Run from the template folder:
 
@@ -14,7 +26,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -TargetRoot "C
 
 Use `-Force` only after reviewing what would be overwritten.
 
-## 2. Customize Required Placeholders
+## 3. Customize Required Placeholders
 
 Replace:
 
@@ -27,13 +39,13 @@ Replace:
 
 The kit intentionally starts conservative: production, data, security, billing, dependencies, destructive migrations, and external effects are gated until `docs/DOMAIN_GATES.md` says otherwise.
 
-## 3. Set Search And Git Hygiene
+## 4. Set Search And Git Hygiene
 
 Append `.agents/templates/GITIGNORE_SNIPPET.txt` to `.gitignore` if the repo does not already ignore generated agent artifacts. Append `.agents/templates/IGNORE_SNIPPET.txt` to `.ignore` if `rg` or local search is pulling in generated proof bundles.
 
 Do not hide hot entrypoints such as `AGENTS.md`, `.agents/rules/rules.md`, or `.planning/ACTIVE_CONTEXT_STATE.json`.
 
-## 4. Fill Current State
+## 5. Fill Current State
 
 Update:
 
@@ -45,7 +57,7 @@ Update:
 
 Keep active context compact. Put raw logs, screenshots, and generated packets in ignored artifact folders.
 
-## 5. Verify
+## 6. Verify
 
 Run:
 
@@ -61,7 +73,7 @@ After all placeholders are customised, run:
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify-agent-governance.ps1 -StrictPlaceholders
 ```
 
-## 6. Operate
+## 7. Operate
 
 - Start agents at `AGENTS.md`.
 - Use GSD planning for ambiguous goals.

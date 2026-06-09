@@ -7,4 +7,5 @@ Thumbs.db
 .tmp/
 tmp/
 .planning/artifacts/
+.planning/onboarding/*.local.json
 .planning/checkpoints/*.local.json

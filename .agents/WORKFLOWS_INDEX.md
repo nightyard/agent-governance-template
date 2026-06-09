@@ -6,6 +6,7 @@ Discovery map for canonical project workflows under `.agents/workflows/`. Use th
 
 | Workflow | Use when | Path |
 |---|---|---|
+| `install-onboarding` | Installing or adapting this kit into an existing repo with an agent | `.agents/workflows/install-onboarding.md` |
 | `agent-onboarding` | Cold-starting or choosing a bounded read profile for unfamiliar work | `.agents/workflows/agent-onboarding.md` |
 | `gsd-planning` | Turning a broad goal into a source-audited plan, safe MVP, or task spec | `.agents/workflows/gsd-planning.md` |
 | `multi-agent-loop` | Running a bounded multi-agent review, implementation, or convergence loop | `.agents/workflows/multi-agent-loop.md` |
@@ -15,6 +16,7 @@ Discovery map for canonical project workflows under `.agents/workflows/`. Use th
 Helper scripts:
 
 - `scripts/claim-scope.ps1` records a portable write-scope claim in `.planning/write-locks.json`.
+- `scripts/discover-workspace.ps1` creates a local onboarding discovery report before installation or merge.
 - `scripts/release-scope.ps1` releases a write-scope claim.
 - `scripts/record-checkpoint.ps1` appends compact long-running work checkpoints to `.planning/agent-checkpoints.md`.
 - `scripts/new-agent-spec.ps1` creates `.planning/<slug>_SPEC.md` from the template.

@@ -7,6 +7,7 @@
 .planning/orchestrator-bundles/
 .planning/dev-server-logs/
 .planning/artifacts/
+.planning/onboarding/*.local.json
 agent-handoffs/
 artifacts/
 
