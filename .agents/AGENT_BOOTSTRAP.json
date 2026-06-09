@@ -76,6 +76,12 @@
     "coordination_skill": ".agents/skills/multiagent-coordination/SKILL.md",
     "setup_guide": "docs/MULTIAGENT_RUNTIME_SETUP.md",
     "setup_workflow": ".agents/workflows/multiagent-runtime-setup.md",
+    "broker_build_guide": "docs/MULTIAGENT_BROKER_BUILD_GUIDE.md",
+    "broker_build_workflow": ".agents/workflows/multiagent-broker-build.md",
+    "broker_scaffold_script": "scripts/scaffold-multiagent-brokers.ps1",
+    "broker_template_dir": ".agents/templates/brokers",
+    "broker_build_spec_template": ".agents/templates/BROKER_BUILD_SPEC.example.json",
+    "broker_templates_bundled": true,
     "settings_template": ".agents/templates/MULTIAGENT_RUNTIME_SETTINGS.example.json",
     "settings_target": ".agents/runtime/MULTIAGENT_RUNTIME_SETTINGS.json",
     "readiness_script": "scripts/check-agent-runtimes.ps1",
@@ -98,6 +104,7 @@
       "run_readiness_script_before_requesting_sign_in",
       "ask_user_for_interactive_sign_in_only_after_failed_or_signed_out_check",
       "rerun_readiness_or_visible_browser_check",
+      "scaffold_or_build_project_owned_brokers",
       "wire_project_owned_brokers",
       "verify_read_only_packet_round_trip"
     ]
@@ -116,6 +123,7 @@
     "git_and_artifact_policy": "docs/WORKFLOW_PROTOCOL.md",
     "multiagent_routing": ".agents/skills/multiagent-coordination/SKILL.md",
     "multiagent_runtime_setup": "docs/MULTIAGENT_RUNTIME_SETUP.md",
+    "multiagent_broker_build": "docs/MULTIAGENT_BROKER_BUILD_GUIDE.md",
     "tooling_policy": "docs/MCP_GUIDE.md",
     "source_map": "docs/INDEX.md"
   },

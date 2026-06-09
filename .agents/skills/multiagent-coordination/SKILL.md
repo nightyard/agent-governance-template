@@ -35,7 +35,8 @@ Before using CLI or browser delegates:
 2. Select the CLI/browser agents the user wants.
 3. Run `scripts/check-agent-runtimes.ps1` before asking the user to sign in.
 4. Ask for interactive sign-in only when a selected CLI status check fails or a browser visible-state check shows a login screen.
-5. Wire project-owned broker/adapters and verify a read-only packet round trip.
+5. Build project-owned brokers with `.agents/workflows/multiagent-broker-build.md`.
+6. Verify a read-only packet round trip.
 
 The included helper scripts are Windows-first PowerShell. On macOS or Linux, port broker, CLI, browser, and dev-server helper runtime scripts before marking multiagent delegation usable.
 

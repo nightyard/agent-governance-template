@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "status": "copy_to_.agents/runtime/MULTIAGENT_BROKER_BUILD.json_and_customize",
+  "broker_scripts": {
+    "facade": "scripts/multiagent-broker.mjs",
+    "packet": "scripts/build-multiagent-evidence-packet.mjs",
+    "cli": "scripts/cli-delegate-broker.mjs",
+    "browser": "scripts/browser-agent-broker.mjs",
+    "dev_server": "scripts/dev-server-broker.mjs"
+  },
+  "readiness_order": [
+    "run scripts/discover-workspace.ps1",
+    "choose CLI/browser agents with the user",
+    "copy and customize .agents/runtime/MULTIAGENT_RUNTIME_SETTINGS.json",
+    "run scripts/check-agent-runtimes.ps1 before asking for sign-in",
+    "scaffold broker scripts with scripts/scaffold-multiagent-brokers.ps1",
+    "configure delegateArgsTemplate or launchCommandTemplate",
+    "test packet builder",
+    "test CLI/browser/dev status commands",
+    "run one read-only packet round trip"
+  ],
+  "forbidden_inputs": [
+    "api keys",
+    "tokens",
+    "cookies",
+    "browser profile folders",
+    "cli auth cache folders",
+    "keychain exports",
+    "private customer data"
+  ]
+}

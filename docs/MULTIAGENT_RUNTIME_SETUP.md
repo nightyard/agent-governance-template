@@ -46,7 +46,8 @@ Do not copy private broker scripts, credentials, browser profiles, CLI auth cach
 7. For browser agents, use the configured browser automation tool to open the provider URL and inspect only visible UI state.
 8. If a login page is visible, ask the user to sign in interactively, then re-check visible app state.
 9. Record accepted runtime choices in project-owned docs or settings.
-10. Only then wire and test broker commands.
+10. Build project-owned broker scripts using `docs/MULTIAGENT_BROKER_BUILD_GUIDE.md`.
+11. Only then wire and test broker commands.
 
 ## Browser Sign-In Rule
 
@@ -73,5 +74,6 @@ Before the multiagent skill can use CLI/browser agents, the project must have:
 - a readiness report from `scripts/check-agent-runtimes.ps1`;
 - visible browser sign-in checks for enabled browser agents;
 - project-owned broker/adapters with documented commands;
+- scaffolded or custom broker scripts tested through `docs/MULTIAGENT_BROKER_BUILD_GUIDE.md`;
 - platform-specific proof on the current OS;
 - local verification that delegate output remains advisory and source-grounded.

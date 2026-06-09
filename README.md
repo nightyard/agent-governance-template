@@ -15,7 +15,7 @@ Use it to give agents:
 - a friction loop for improving the rules over time;
 - a lightweight LLM wiki for source discovery, not authority;
 - a generic multi-agent coordination skill.
-- optional CLI/browser runtime onboarding for project-owned multiagent brokers.
+- optional CLI/browser runtime onboarding and broker scaffolding for project-owned multiagent brokers.
 
 ## Install
 
@@ -26,7 +26,7 @@ If an AI agent is doing the install, give it this repo link and tell it to read 
 Short prompt:
 
 ```text
-Clone https://github.com/nightyard/agent-governance-template, read .agents/AGENT_BOOTSTRAP.json, and follow docs/AGENTIC_INSTALL_GUIDE.md. Run scripts/discover-workspace.ps1 against this workspace before installing. Infer project name, branch, package manager, verification commands, and existing agent rules from the repo. Ask me only for missing domain gates, owners, private-data rules, current posture, conflict decisions, and which CLI/browser agents I want enabled. Test selected agents before asking me to sign in. Do not use -Force without exact path approval.
+Clone https://github.com/nightyard/agent-governance-template, read .agents/AGENT_BOOTSTRAP.json, and follow docs/AGENTIC_INSTALL_GUIDE.md. Run scripts/discover-workspace.ps1 against this workspace before installing. Infer project name, branch, package manager, verification commands, and existing agent rules from the repo. Ask me only for missing domain gates, owners, private-data rules, current posture, conflict decisions, and which CLI/browser agents I want enabled. Test selected agents before asking me to sign in. If I want multiagent delegation, scaffold/build project-owned brokers using docs/MULTIAGENT_BROKER_BUILD_GUIDE.md. Do not use -Force without exact path approval.
 ```
 
 ### Manual Install
@@ -70,6 +70,6 @@ Read `docs/ADOPTION_GUIDE.md` first. At minimum:
 
 Keep the always-read path small. Use `.agents/AGENT_BOOTSTRAP.json` for deterministic machine routing, `AGENTS.md` for durable hard stops and conflict order, `.planning/ACTIVE_CONTEXT_STATE.json` for live posture, and `.planning/llm-wiki/` only as a source map. Large logs, screenshots, generated packets, and provider payloads belong in ignored artifacts, not in hot context files.
 
-The multiagent skill is portable as governance, but its CLI/browser execution layer is intentionally project-owned. This kit does not ship private broker scripts or auth/cache material. The bundled helper scripts are Windows-first PowerShell; macOS/Linux environments must port broker, CLI, browser, and dev-server helper runtime scripts before using multiagent delegation.
+The multiagent skill is portable as governance, and the kit includes generic broker templates for an installing agent to scaffold. It does not ship private broker scripts or auth/cache material. The bundled helper scripts are Windows-first PowerShell; macOS/Linux environments must port broker, CLI, browser, and dev-server helper runtime scripts before using multiagent delegation.
 
 `KIT_MANIFEST.json` is the package inventory. The installer and verifier read it so the copied file set cannot silently drift.

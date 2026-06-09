@@ -10,3 +10,4 @@ tmp/
 .planning/onboarding/*.local.json
 .planning/checkpoints/*.local.json
 .agents/runtime/MULTIAGENT_RUNTIME_SETTINGS.json
+.agents/runtime/MULTIAGENT_BROKER_BUILD.json

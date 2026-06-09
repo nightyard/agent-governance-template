@@ -9,6 +9,7 @@
 .planning/artifacts/
 .planning/onboarding/*.local.json
 .agents/runtime/MULTIAGENT_RUNTIME_SETTINGS.json
+.agents/runtime/MULTIAGENT_BROKER_BUILD.json
 agent-handoffs/
 artifacts/
 

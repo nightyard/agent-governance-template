@@ -17,7 +17,8 @@ Use this before enabling CLI or browser delegation from `.agents/skills/multiage
 7. For failed CLI status checks, ask the user to run the provider's interactive login flow, then rerun the readiness script.
 8. For browser agents, open the provider URL using browser automation and inspect visible UI state only.
 9. If the browser provider shows a login page, ask the user to sign in interactively, then re-check.
-10. Wire project-owned broker/adapters and verify a read-only packet round trip before allowing delegate work.
+10. Follow `.agents/workflows/multiagent-broker-build.md` to scaffold or build broker/adapters.
+11. Verify a read-only packet round trip before allowing delegate work.
 
 ## Exit Criteria
 
@@ -25,4 +26,5 @@ Use this before enabling CLI or browser delegation from `.agents/skills/multiage
 - `.planning/onboarding/agent-runtime-readiness.local.json` exists;
 - browser agents have visible sign-in proof, not cache proof;
 - OS-specific broker/CLI/browser helper commands are documented;
+- project-owned broker scripts have been scaffolded or built;
 - a read-only multiagent packet test has passed.
