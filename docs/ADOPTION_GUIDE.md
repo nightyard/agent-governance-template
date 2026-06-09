@@ -6,7 +6,7 @@ Use this once when installing the kit into a new repository, then keep `AGENTS.m
 
 ## 1. Agentic Preflight
 
-When an AI agent is doing the install, start with `docs/AGENTIC_INSTALL_GUIDE.md`.
+When an AI agent is doing the install, start with `.agents/AGENT_BOOTSTRAP.json` and `docs/AGENTIC_INSTALL_GUIDE.md`.
 
 From the kit folder, run discovery against the target repo before copying files:
 

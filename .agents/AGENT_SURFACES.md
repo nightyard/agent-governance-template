@@ -10,6 +10,7 @@ This map keeps different agentic IDEs pointed at the same authority. It is not a
 | Claude Code / Claude Desktop | `CLAUDE.md` -> `AGENTS.md` | Thin dispatcher only. Do not duplicate rules in Claude-specific files. |
 | Gemini / browser agent / external coding tools | `GEMINI.md` -> `AGENTS.md` | Thin dispatcher only. Give code-blind browser agents source excerpts or packets. |
 | Injected rules systems | `.agents/rules/rules.md` -> `AGENTS.md` | Compact hot-path dispatcher. |
+| Machine-readable bootstrap | `.agents/AGENT_BOOTSTRAP.json` -> `AGENTS.md` | Deterministic routing for agent installers and agentic IDEs; not a higher authority. |
 | Project skills | `.agents/skills/INDEX.md` | Skills are routing aids below `AGENTS.md` and `docs/`. |
 | Project workflows | `.agents/WORKFLOWS_INDEX.md` | Workflows are repeatable procedures below governing docs. |
 | MCP / connectors | `docs/MCP_GUIDE.md` | Tool availability differs by environment; local evidence wins. |

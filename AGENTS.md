@@ -4,6 +4,8 @@ Last verified: [YYYY-MM-DD]
 
 Canonical governance and agent entrypoint. `CLAUDE.md`, `GEMINI.md`, and `.agents/rules/rules.md` are thin dispatchers back here, not parallel authorities.
 
+Machine-readable bootstrap lives at `.agents/AGENT_BOOTSTRAP.json`. Use it for deterministic routing, install onboarding, and source discovery; if it conflicts with prose governance, follow the Conflict Order below.
+
 External orchestrators, installers, browser agents, and model delegates are advisory until this repo's governing docs approve their exact use. They may not overwrite governance, planning state, Git workflow, production gates, or safety posture.
 
 <a name="hard-stops"></a>
@@ -49,6 +51,7 @@ Read only the task-relevant section. Full authority map: `docs/INDEX.md`.
 - Agent surface map and cross-IDE dispatch: `.agents/AGENT_SURFACES.md`.
 - Workflow discovery: `.agents/WORKFLOWS_INDEX.md`.
 - Skill discovery: `.agents/skills/INDEX.md`.
+- Machine-readable bootstrap: `.agents/AGENT_BOOTSTRAP.json`.
 
 ## Spec And Proof
 

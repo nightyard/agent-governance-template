@@ -2,7 +2,7 @@
 
 Last verified: [YYYY-MM-DD]
 
-Discovery map for canonical project workflows under `.agents/workflows/`. Use this only when choosing a repeatable process; it is not an always-read startup file.
+Discovery map for canonical project workflows under `.agents/workflows/`. Use this only when choosing a repeatable process; machine bootstrap lives at `.agents/AGENT_BOOTSTRAP.json`.
 
 | Workflow | Use when | Path |
 |---|---|---|

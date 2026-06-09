@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "purpose": "Machine-readable bootstrap map for agentic coding assistants installing or operating this governance kit.",
+  "optimized_for": [
+    "agentic_ai",
+    "codex",
+    "claude_code",
+    "gemini",
+    "browser_agent",
+    "other_agentic_ide"
+  ],
+  "authority": {
+    "machine_entrypoint": ".agents/AGENT_BOOTSTRAP.json",
+    "canonical_entrypoint": "AGENTS.md",
+    "profile_source": ".agents/startup-profiles.json",
+    "conflict_order": [
+      "user_instruction",
+      "AGENTS.md",
+      "docs/AGENT_OPERATING_MODEL.md",
+      "domain_docs",
+      "local_code_patterns",
+      ".planning/llm-wiki"
+    ],
+    "llm_wiki_authority": "navigation_only"
+  },
+  "startup": {
+    "default_profile": "direct",
+    "profile_decision_source": ".agents/startup-profiles.json#profileSelection",
+    "direct": {
+      "read": [
+        "AGENTS.md"
+      ],
+      "use_when": "small_familiar_sensitive_or_tightly_coupled"
+    },
+    "cold": {
+      "read": [
+        "AGENTS.md",
+        ".agents/workflows/agent-onboarding.md"
+      ],
+      "use_when": "new_or_returning_agent_or_unfamiliar_area"
+    },
+    "broad": {
+      "read": [
+        "AGENTS.md",
+        ".planning/ACTIVE_CONTEXT_STATE.json"
+      ],
+      "use_when": "release_infrastructure_shared_architecture_multi_silo_or_unclear_live_posture"
+    }
+  },
+  "install_onboarding": {
+    "agent_guide": "docs/AGENTIC_INSTALL_GUIDE.md",
+    "workflow": ".agents/workflows/install-onboarding.md",
+    "discovery_script": "scripts/discover-workspace.ps1",
+    "local_report": ".planning/onboarding/workspace-discovery.local.json",
+    "ask_user_only_for": [
+      "domain_hard_stops_and_approval_gates",
+      "private_data_and_external_tool_policy",
+      "owners_and_escalation_sources",
+      "current_phase_production_status_and_blockers",
+      "low_confidence_project_branch_or_verification_facts",
+      "exact_handling_of_existing_governance_conflicts"
+    ],
+    "never_ask_for": [
+      "secrets",
+      "tokens",
+      "cookies",
+      "private_keys",
+      "browser_profiles",
+      "cli_auth_caches",
+      "credential_paths"
+    ],
+    "overwrite_policy": "do_not_use_force_without_exact_path_user_approval"
+  },
+  "machine_readable_sources": {
+    "kit_manifest": "KIT_MANIFEST.json",
+    "startup_profiles": ".agents/startup-profiles.json",
+    "active_state": ".planning/ACTIVE_CONTEXT_STATE.json",
+    "project_settings_template": ".agents/templates/PROJECT_SETTINGS.example.json",
+    "workspace_discovery_report": ".planning/onboarding/workspace-discovery.local.json"
+  },
+  "decision_sources": {
+    "risk_classification": "docs/DOMAIN_GATES.md",
+    "spec_policy": "docs/AGENT_OPERATING_MODEL.md",
+    "verification_policy": "docs/AGENT_OPERATING_MODEL.md",
+    "git_and_artifact_policy": "docs/WORKFLOW_PROTOCOL.md",
+    "multiagent_routing": ".agents/skills/multiagent-coordination/SKILL.md",
+    "tooling_policy": "docs/MCP_GUIDE.md",
+    "source_map": "docs/INDEX.md"
+  },
+  "safety": {
+    "always": [
+      "preserve_dirty_worktrees",
+      "stage_explicit_paths_only",
+      "verify_current_authoritative_sources_for_volatile_facts",
+      "classify_risky_work_before_editing",
+      "keep_generated_logs_and_packets_out_of_hot_context"
+    ],
+    "never": [
+      "blanket_stage",
+      "destructive_git_without_explicit_user_request",
+      "production_or_external_effect_without_approval",
+      "share_private_data_or_credentials_with_external_tools",
+      "export_cli_or_browser_auth_cache_material",
+      "add_production_dependency_without_approval"
+    ]
+  },
+  "handoff_contract": {
+    "final_report_fields": [
+      "changed_files",
+      "verification_run",
+      "remaining_placeholders",
+      "user_decisions_needed",
+      "known_risks"
+    ],
+    "delegate_output_status": "advisory_until_primary_agent_verifies_locally"
+  }
+}

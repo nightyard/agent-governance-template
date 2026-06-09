@@ -94,6 +94,7 @@
     "budgetWords": 3000
   },
   "fileCaps": {
+    ".agents/AGENT_BOOTSTRAP.json": { "maxWords": 900, "warnBytes": 8192, "failBytes": 12288 },
     "AGENTS.md": { "maxWords": 1100, "warnBytes": 8192, "failBytes": 12288 },
     ".agents/rules/rules.md": { "maxWords": 300 },
     ".agents/AGENT_SURFACES.md": { "maxWords": 350 },
@@ -114,6 +115,7 @@
     "hardStopsAnchor": "hard-stops",
     "hardStopsBeforeRouting": true,
     "bottomChecksumRequired": true,
-    "bottomChecksumPattern": "SAFETY CHECKSUM"
+    "bottomChecksumPattern": "SAFETY CHECKSUM",
+    "machineBootstrap": ".agents/AGENT_BOOTSTRAP.json"
   }
 }

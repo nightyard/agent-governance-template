@@ -9,7 +9,7 @@ Use this when an AI agent is installing the kit into an existing workspace. The 
 ```text
 Install the generic agent governance kit into this workspace.
 
-First clone or open https://github.com/nightyard/agent-governance-template. Before copying files, run its workspace discovery script against this repo:
+First clone or open https://github.com/nightyard/agent-governance-template. Read `.agents/AGENT_BOOTSTRAP.json` for machine-readable routing. Before copying files, run its workspace discovery script against this repo:
 
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\discover-workspace.ps1 -TargetRoot "<absolute path to this repo>"
 
@@ -23,7 +23,7 @@ If no target files conflict, run install.ps1 with the inferred project name, dat
 ## Installer Workflow
 
 1. Identify the target repo root and confirm you are not operating inside the kit repo by mistake.
-2. Run `scripts/discover-workspace.ps1` from the kit repo against the target repo.
+2. Parse `.agents/AGENT_BOOTSTRAP.json`, then run `scripts/discover-workspace.ps1` from the kit repo against the target repo.
 3. Read the discovery report and the listed existing rules/docs with bounded reads.
 4. Infer:
    - project name;

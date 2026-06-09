@@ -51,6 +51,7 @@ foreach ($relative in $installFiles) {
 }
 
 $jsonFiles = @(
+    ".agents/AGENT_BOOTSTRAP.json",
     ".agents/startup-profiles.json",
     ".planning/ACTIVE_CONTEXT_STATE.json",
     ".agents/templates/PROJECT_SETTINGS.example.json",
@@ -66,6 +67,31 @@ foreach ($relative in $jsonFiles) {
         catch {
             Add-Failure "Invalid JSON: $relative ($($_.Exception.Message))"
         }
+    }
+}
+
+$bootstrapPath = Join-Path $TargetRoot ".agents/AGENT_BOOTSTRAP.json"
+if (Test-Path -LiteralPath $bootstrapPath) {
+    try {
+        $bootstrap = Get-Content -Raw -LiteralPath $bootstrapPath | ConvertFrom-Json
+        if ($bootstrap.purpose -notmatch "Machine-readable") {
+            Add-Failure ".agents/AGENT_BOOTSTRAP.json is missing a machine-readable purpose."
+        }
+        if ($bootstrap.authority.canonical_entrypoint -ne "AGENTS.md") {
+            Add-Failure ".agents/AGENT_BOOTSTRAP.json should route canonical authority to AGENTS.md."
+        }
+        if ($bootstrap.authority.profile_source -ne ".agents/startup-profiles.json") {
+            Add-Failure ".agents/AGENT_BOOTSTRAP.json should point at .agents/startup-profiles.json for profiles."
+        }
+        if ($bootstrap.install_onboarding.discovery_script -ne "scripts/discover-workspace.ps1") {
+            Add-Failure ".agents/AGENT_BOOTSTRAP.json should point at scripts/discover-workspace.ps1 for onboarding discovery."
+        }
+        if (-not @($bootstrap.safety.never).Contains("export_cli_or_browser_auth_cache_material")) {
+            Add-Failure ".agents/AGENT_BOOTSTRAP.json is missing the auth/cache export prohibition."
+        }
+    }
+    catch {
+        Add-Failure "Could not evaluate .agents/AGENT_BOOTSTRAP.json ($($_.Exception.Message))"
     }
 }
 

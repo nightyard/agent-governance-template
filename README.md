@@ -5,6 +5,7 @@ This folder is a portable starter governance set for Codex and other agentic IDE
 Use it to give agents:
 
 - one canonical entrypoint (`AGENTS.md`);
+- one machine-readable bootstrap map (`.agents/AGENT_BOOTSTRAP.json`);
 - thin tool dispatchers (`CLAUDE.md`, `GEMINI.md`, `.agents/rules/rules.md`);
 - bounded startup profiles;
 - a GSD-inspired planning workflow;
@@ -19,12 +20,12 @@ Use it to give agents:
 
 ### Agent-Assisted Install
 
-If an AI agent is doing the install, give it this repo link and tell it to follow `docs/AGENTIC_INSTALL_GUIDE.md`. It should run the discovery script against the target workspace first, infer what it can from existing rules/docs/tooling, then ask only for the missing decisions.
+If an AI agent is doing the install, give it this repo link and tell it to read `.agents/AGENT_BOOTSTRAP.json`, then follow `docs/AGENTIC_INSTALL_GUIDE.md`. It should run the discovery script against the target workspace first, infer what it can from existing rules/docs/tooling, then ask only for the missing decisions.
 
 Short prompt:
 
 ```text
-Clone https://github.com/nightyard/agent-governance-template and follow docs/AGENTIC_INSTALL_GUIDE.md. Run scripts/discover-workspace.ps1 against this workspace before installing. Infer project name, branch, package manager, verification commands, and existing agent rules from the repo. Ask me only for missing domain gates, owners, private-data rules, current posture, and conflict decisions. Do not use -Force without exact path approval.
+Clone https://github.com/nightyard/agent-governance-template, read .agents/AGENT_BOOTSTRAP.json, and follow docs/AGENTIC_INSTALL_GUIDE.md. Run scripts/discover-workspace.ps1 against this workspace before installing. Infer project name, branch, package manager, verification commands, and existing agent rules from the repo. Ask me only for missing domain gates, owners, private-data rules, current posture, and conflict decisions. Do not use -Force without exact path approval.
 ```
 
 ### Manual Install
@@ -66,6 +67,6 @@ Read `docs/ADOPTION_GUIDE.md` first. At minimum:
 
 ## Design Intent
 
-Keep the always-read path small. Use `AGENTS.md` for durable hard stops and routing, `.planning/ACTIVE_CONTEXT_STATE.json` for live posture, and `.planning/llm-wiki/` only as a source map. Large logs, screenshots, generated packets, and provider payloads belong in ignored artifacts, not in hot context files.
+Keep the always-read path small. Use `.agents/AGENT_BOOTSTRAP.json` for deterministic machine routing, `AGENTS.md` for durable hard stops and conflict order, `.planning/ACTIVE_CONTEXT_STATE.json` for live posture, and `.planning/llm-wiki/` only as a source map. Large logs, screenshots, generated packets, and provider payloads belong in ignored artifacts, not in hot context files.
 
 `KIT_MANIFEST.json` is the package inventory. The installer and verifier read it so the copied file set cannot silently drift.
