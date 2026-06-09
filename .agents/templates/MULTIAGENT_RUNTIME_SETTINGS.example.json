@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "status": "copy_to_.agents/runtime/MULTIAGENT_RUNTIME_SETTINGS.json_and_customize",
+  "os_model": {
+    "primary": "windows",
+    "macos_port_required_before_cli_browser_broker_use": true,
+    "porting_scope": [
+      "broker_process_launch_and_wait",
+      "detached_jobs_and_lock_files",
+      "path_resolution_and_quoting",
+      "shell_commands",
+      "browser_automation_and_profile_handling",
+      "dev_server_helpers"
+    ]
+  },
+  "runtime_status": {
+    "coordination_skill": "installed",
+    "broker_scripts": "not_bundled",
+    "cli_agents": "project_owned_optional",
+    "browser_agents": "project_owned_optional"
+  },
+  "cliAgents": [
+    {
+      "id": "codex",
+      "enabled": false,
+      "command": "codex",
+      "versionArgs": ["--version"],
+      "statusArgs": [],
+      "loginInstructions": "Use the provider's interactive login command, then rerun scripts/check-agent-runtimes.ps1."
+    },
+    {
+      "id": "claude",
+      "enabled": false,
+      "command": "claude",
+      "versionArgs": ["--version"],
+      "statusArgs": [],
+      "loginInstructions": "Use the provider's interactive login command, then rerun scripts/check-agent-runtimes.ps1."
+    },
+    {
+      "id": "gemini",
+      "enabled": false,
+      "command": "gemini",
+      "versionArgs": ["--version"],
+      "statusArgs": [],
+      "loginInstructions": "Use the provider's interactive login command, then rerun scripts/check-agent-runtimes.ps1."
+    },
+    {
+      "id": "custom",
+      "enabled": false,
+      "command": "[command]",
+      "versionArgs": ["--version"],
+      "statusArgs": [],
+      "loginInstructions": "[interactive login instructions]"
+    }
+  ],
+  "browserAgents": [
+    {
+      "id": "chatgpt",
+      "enabled": false,
+      "url": "https://chatgpt.com",
+      "readinessCheck": "Open with the configured browser automation tool and confirm a logged-in app view is visible. Do not inspect cookies or profile files."
+    },
+    {
+      "id": "gemini",
+      "enabled": false,
+      "url": "https://gemini.google.com",
+      "readinessCheck": "Open with the configured browser automation tool and confirm a logged-in app view is visible. Do not inspect cookies or profile files."
+    },
+    {
+      "id": "notebooklm",
+      "enabled": false,
+      "url": "https://notebooklm.google.com",
+      "readinessCheck": "Open with the configured browser automation tool and confirm a logged-in app view is visible. Do not inspect cookies or profile files."
+    },
+    {
+      "id": "custom",
+      "enabled": false,
+      "url": "[url]",
+      "readinessCheck": "[visible logged-in state check]"
+    }
+  ]
+}

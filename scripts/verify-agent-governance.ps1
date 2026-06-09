@@ -53,6 +53,7 @@ foreach ($relative in $installFiles) {
 $jsonFiles = @(
     ".agents/AGENT_BOOTSTRAP.json",
     ".agents/startup-profiles.json",
+    ".agents/templates/MULTIAGENT_RUNTIME_SETTINGS.example.json",
     ".planning/ACTIVE_CONTEXT_STATE.json",
     ".agents/templates/PROJECT_SETTINGS.example.json",
     "KIT_MANIFEST.json"
@@ -89,6 +90,15 @@ if (Test-Path -LiteralPath $bootstrapPath) {
         if (-not @($bootstrap.safety.never).Contains("export_cli_or_browser_auth_cache_material")) {
             Add-Failure ".agents/AGENT_BOOTSTRAP.json is missing the auth/cache export prohibition."
         }
+        if ($bootstrap.multiagent_runtime.broker_scripts_bundled -ne $false) {
+            Add-Failure ".agents/AGENT_BOOTSTRAP.json should state that broker scripts are not bundled."
+        }
+        if ($bootstrap.multiagent_runtime.readiness_script -ne "scripts/check-agent-runtimes.ps1") {
+            Add-Failure ".agents/AGENT_BOOTSTRAP.json should point at scripts/check-agent-runtimes.ps1."
+        }
+        if ($bootstrap.multiagent_runtime.macos_linux_port_required_before_use -ne $true) {
+            Add-Failure ".agents/AGENT_BOOTSTRAP.json should require macOS/Linux runtime porting before use."
+        }
     }
     catch {
         Add-Failure "Could not evaluate .agents/AGENT_BOOTSTRAP.json ($($_.Exception.Message))"
@@ -117,6 +127,9 @@ if (Test-Path -LiteralPath $multiagentSkillPath) {
     $multiagentSkill = Get-Content -Raw -LiteralPath $multiagentSkillPath
     if ($multiagentSkill -notmatch 'Do not include local CLI profiles' -or $multiagentSkill -notmatch 'browser profiles' -or $multiagentSkill -notmatch 'auth caches') {
         Add-Failure "multiagent-coordination/SKILL.md is missing the auth/cache exclusion policy."
+    }
+    if ($multiagentSkill -notmatch 'does not bundle a CLI broker' -or $multiagentSkill -notmatch 'Windows-first PowerShell' -or $multiagentSkill -notmatch 'macOS or Linux') {
+        Add-Failure "multiagent-coordination/SKILL.md is missing the generic runtime/porting disclosure."
     }
 }
 

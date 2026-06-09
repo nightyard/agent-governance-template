@@ -8,6 +8,7 @@
 .planning/dev-server-logs/
 .planning/artifacts/
 .planning/onboarding/*.local.json
+.agents/runtime/MULTIAGENT_RUNTIME_SETTINGS.json
 agent-handoffs/
 artifacts/
 

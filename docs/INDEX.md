@@ -14,6 +14,7 @@ Use this as the map of where authority lives. It is not a substitute for reading
 | Architecture and module ownership | `docs/ARCHITECTURE.md` |
 | Current facts, constants, vendor/source references | `docs/KNOWLEDGE.md` |
 | Tooling/MCP | `docs/MCP_GUIDE.md` |
+| Multiagent runtime setup | `docs/MULTIAGENT_RUNTIME_SETUP.md` |
 | Cross-agent surface map | `.agents/AGENT_SURFACES.md` |
 | Machine-readable bootstrap and routing | `.agents/AGENT_BOOTSTRAP.json` |
 | Context performance/search/prune | `docs/dev/context-performance-review.md` |

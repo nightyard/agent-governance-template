@@ -13,11 +13,11 @@ First clone or open https://github.com/nightyard/agent-governance-template. Read
 
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\discover-workspace.ps1 -TargetRoot "<absolute path to this repo>"
 
-Read the generated workspace-discovery.local.json report. Use existing AGENTS/CLAUDE/GEMINI/Cursor/Windsurf/GitHub Copilot rules, README/docs, package files, CI files, and inferred test commands where available. Ask me only for the missing decisions listed in the report, especially domain hard stops, private-data policy, owners, current phase, production status, and unresolved install conflicts.
+Read the generated workspace-discovery.local.json report. Use existing AGENTS/CLAUDE/GEMINI/Cursor/Windsurf/GitHub Copilot rules, README/docs, package files, CI files, and inferred test commands where available. Ask me only for the missing decisions listed in the report, especially domain hard stops, private-data policy, owners, current phase, production status, unresolved install conflicts, and which CLI/browser agents I want set up.
 
-Do not ask for secrets. Do not read or export .env files, private keys, cookies, browser profiles, CLI auth caches, token stores, or machine-specific credential paths. Do not run install.ps1 -Force unless you list the exact overwritten paths and I approve them.
+Before asking me to sign into any selected CLI or browser agent, test readiness first. Use scripts/check-agent-runtimes.ps1 for CLI checks and visible browser UI checks for browser agents. If I am not signed in, ask me to complete the provider's interactive sign-in flow, then re-test. Do not ask for secrets. Do not read or export .env files, private keys, cookies, browser profiles, CLI auth caches, token stores, or machine-specific credential paths. Do not run install.ps1 -Force unless you list the exact overwritten paths and I approve them.
 
-If no target files conflict, run install.ps1 with the inferred project name, date, and default branch. If files conflict, install the kit to a temporary staging folder and merge it into the repo while preserving existing rules. Then fill docs/DOMAIN_GATES.md, docs/PROJECT_CONTEXT.md, .planning/ACTIVE_CONTEXT_STATE.json, and AGENTS.md from discovered sources plus my answers. Finish by running scripts/verify-agent-governance.ps1 and report changed files plus remaining placeholders.
+If no target files conflict, run install.ps1 with the inferred project name, date, and default branch. If files conflict, install the kit to a temporary staging folder and merge it into the repo while preserving existing rules. Then fill docs/DOMAIN_GATES.md, docs/PROJECT_CONTEXT.md, .planning/ACTIVE_CONTEXT_STATE.json, and AGENTS.md from discovered sources plus my answers. If the environment is macOS or Linux, port Windows-first broker, CLI, browser, and dev-server helpers before marking multiagent delegation usable. Finish by running scripts/verify-agent-governance.ps1 and report changed files, runtime readiness, and remaining placeholders.
 ```
 
 ## Installer Workflow
@@ -34,16 +34,19 @@ If no target files conflict, run install.ps1 with the inferred project name, dat
    - CI/task-runner files;
    - production, data, deployment, or migration risk hints by path only.
 5. Ask the user only for missing or low-confidence decisions.
-6. Install directly only when the report says `direct-install`.
-7. If the report says `stage-and-merge`, install to a temporary folder and merge manually. Preserve existing hard stops unless the user explicitly retires them.
-8. Update required files:
+6. Ask which optional CLI agents and browser agents to set up.
+7. Install directly only when the report says `direct-install`.
+8. If the report says `stage-and-merge`, install to a temporary folder and merge manually. Preserve existing hard stops unless the user explicitly retires them.
+9. Update required files:
    - `AGENTS.md`;
    - `docs/DOMAIN_GATES.md`;
    - `docs/PROJECT_CONTEXT.md`;
    - `.planning/ACTIVE_CONTEXT_STATE.json`;
    - `.planning/ACTIVE_CONTEXT.md`;
    - `.agents/startup-profiles.json` if the repo has different hot files.
-9. Run the verifier. Use `-StrictPlaceholders` only after owner/project placeholders are actually resolved.
+10. For selected CLI/browser agents, follow `docs/MULTIAGENT_RUNTIME_SETUP.md`.
+11. On macOS or Linux, port Windows-first broker/CLI/browser/dev-server runtime helpers before enabling multiagent delegation.
+12. Run the verifier. Use `-StrictPlaceholders` only after owner/project placeholders are actually resolved.
 
 ## What The Discovery Script Does
 

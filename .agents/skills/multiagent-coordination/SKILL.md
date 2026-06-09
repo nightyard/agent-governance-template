@@ -25,6 +25,20 @@ Delegate when any of: 15+ files, 3+ silos, repeated slices, fanout, compare-appr
 
 Stay local when the task is tiny, sensitive, one-file, tightly coupled, cheaper to verify locally, or blocked by missing permission to share context.
 
+## Runtime Status
+
+This skill is a coordination layer. It does not bundle a CLI broker, browser broker, dev-server broker, provider accounts, browser automation profile, or auth setup.
+
+Before using CLI or browser delegates:
+
+1. Follow `.agents/workflows/multiagent-runtime-setup.md`.
+2. Select the CLI/browser agents the user wants.
+3. Run `scripts/check-agent-runtimes.ps1` before asking the user to sign in.
+4. Ask for interactive sign-in only when a selected CLI status check fails or a browser visible-state check shows a login screen.
+5. Wire project-owned broker/adapters and verify a read-only packet round trip.
+
+The included helper scripts are Windows-first PowerShell. On macOS or Linux, port broker, CLI, browser, and dev-server helper runtime scripts before marking multiagent delegation usable.
+
 ## Standard Workflow
 
 1. Decide if delegation beats verification overhead.

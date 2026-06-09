@@ -13,4 +13,6 @@ Use the lightest channel that can produce a verifiable answer.
 
 Delegate output is never authority by itself. Local repo state and governing docs win over external suggestions.
 
+CLI/browser routes require completed runtime setup: selected agents, readiness report, sign-in checks, and project-owned broker/adapters. On macOS or Linux, port Windows-first runtime helpers before using those routes.
+
 Do not route credential, auth-cache, browser-profile, cookie, keychain, token, or private-production-data inspection to external delegates. Handle that work locally, redact aggressively, and report only non-sensitive conclusions.

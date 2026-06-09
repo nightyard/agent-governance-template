@@ -30,12 +30,15 @@ Infer what can be inferred from the workspace, preserve existing rules, ask the 
 5. If the report says `direct-install`, run `install.ps1` with inferred values.
 6. If the report says `stage-and-merge`, install to a temporary folder and merge by hand. Do not use `-Force` without path-level user approval.
 7. Fill or merge `AGENTS.md`, `docs/DOMAIN_GATES.md`, `docs/PROJECT_CONTEXT.md`, `.planning/ACTIVE_CONTEXT_STATE.json`, and `.planning/ACTIVE_CONTEXT.md`.
-8. Run `scripts/verify-agent-governance.ps1`. Run `-StrictPlaceholders` only after customisation is complete.
-9. Report changed files, verification output, preserved existing rules, and remaining user-owned placeholders.
+8. Ask which CLI agents and browser agents the user wants to enable. If any are selected, run `.agents/workflows/multiagent-runtime-setup.md`.
+9. Run `scripts/verify-agent-governance.ps1`. Run `-StrictPlaceholders` only after customisation is complete.
+10. Report changed files, verification output, preserved existing rules, runtime readiness, and remaining user-owned placeholders.
 
 ## Safety Rules
 
 - Do not ask for or export secrets, tokens, cookies, private keys, browser profiles, CLI auth caches, or credential paths.
 - Do not read `.env` files unless the user explicitly asks for local-only inspection.
 - Do not send the discovery report to external delegates without user approval.
+- Test selected CLI/browser agents before asking the user to sign in.
+- On macOS or Linux, port Windows-first broker/CLI/browser/dev-server runtime scripts before enabling multiagent delegation.
 - Existing hard stops remain active until deliberately replaced.

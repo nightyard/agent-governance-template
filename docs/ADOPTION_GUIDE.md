@@ -16,6 +16,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\discover-workspace
 
 The installing agent should read the generated `.planning/onboarding/workspace-discovery.local.json`, infer what it can from existing rules/docs/tooling, and ask the user only for missing decisions.
 
+If CLI/browser delegates are desired, follow `docs/MULTIAGENT_RUNTIME_SETUP.md`. The generic kit includes coordination rules, not a ready-made broker runtime.
+
 ## 2. Install
 
 Run from the template folder:

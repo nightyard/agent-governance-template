@@ -100,6 +100,7 @@
     ".agents/AGENT_SURFACES.md": { "maxWords": 350 },
     ".agents/workflows/agent-onboarding.md": { "maxWords": 650 },
     ".agents/workflows/gsd-planning.md": { "maxWords": 900 },
+    ".agents/workflows/multiagent-runtime-setup.md": { "maxWords": 700 },
     ".agents/workflows/multi-agent-loop.md": { "maxWords": 1300, "failBytes": 12288 },
     ".agents/skills/multiagent-coordination/SKILL.md": { "maxWords": 1000 },
     "CLAUDE.md": { "maxWords": 120 },
@@ -108,6 +109,7 @@
     ".planning/ACTIVE_CONTEXT_STATE.json": { "warnBytes": 8192, "failBytes": 12288 },
     "docs/ADOPTION_GUIDE.md": { "maxWords": 700 },
     "docs/ARCHITECTURE.md": { "maxWords": 1500 },
+    "docs/MULTIAGENT_RUNTIME_SETUP.md": { "maxWords": 1200 },
     "docs/KNOWLEDGE.md": { "maxWords": 1500 }
   },
   "structure": {

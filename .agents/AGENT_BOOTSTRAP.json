@@ -58,7 +58,8 @@
       "owners_and_escalation_sources",
       "current_phase_production_status_and_blockers",
       "low_confidence_project_branch_or_verification_facts",
-      "exact_handling_of_existing_governance_conflicts"
+      "exact_handling_of_existing_governance_conflicts",
+      "which_cli_agents_and_browser_agents_to_enable"
     ],
     "never_ask_for": [
       "secrets",
@@ -70,6 +71,36 @@
       "credential_paths"
     ],
     "overwrite_policy": "do_not_use_force_without_exact_path_user_approval"
+  },
+  "multiagent_runtime": {
+    "coordination_skill": ".agents/skills/multiagent-coordination/SKILL.md",
+    "setup_guide": "docs/MULTIAGENT_RUNTIME_SETUP.md",
+    "setup_workflow": ".agents/workflows/multiagent-runtime-setup.md",
+    "settings_template": ".agents/templates/MULTIAGENT_RUNTIME_SETTINGS.example.json",
+    "settings_target": ".agents/runtime/MULTIAGENT_RUNTIME_SETTINGS.json",
+    "readiness_script": "scripts/check-agent-runtimes.ps1",
+    "readiness_report": ".planning/onboarding/agent-runtime-readiness.local.json",
+    "broker_scripts_bundled": false,
+    "runtime_status": "coordination_installed_cli_browser_execution_requires_project_owned_brokers",
+    "windows_first": true,
+    "macos_linux_port_required_before_use": true,
+    "porting_scope": [
+      "broker_process_launch_wait_and_status",
+      "cli_adapter_commands",
+      "browser_automation_and_visible_sign_in_checks",
+      "dev_server_helpers",
+      "path_resolution_and_shell_quoting",
+      "lock_files_and_concurrency_state"
+    ],
+    "setup_sequence": [
+      "ask_user_which_cli_agents_to_enable",
+      "ask_user_which_browser_agents_to_enable",
+      "run_readiness_script_before_requesting_sign_in",
+      "ask_user_for_interactive_sign_in_only_after_failed_or_signed_out_check",
+      "rerun_readiness_or_visible_browser_check",
+      "wire_project_owned_brokers",
+      "verify_read_only_packet_round_trip"
+    ]
   },
   "machine_readable_sources": {
     "kit_manifest": "KIT_MANIFEST.json",
@@ -84,6 +115,7 @@
     "verification_policy": "docs/AGENT_OPERATING_MODEL.md",
     "git_and_artifact_policy": "docs/WORKFLOW_PROTOCOL.md",
     "multiagent_routing": ".agents/skills/multiagent-coordination/SKILL.md",
+    "multiagent_runtime_setup": "docs/MULTIAGENT_RUNTIME_SETUP.md",
     "tooling_policy": "docs/MCP_GUIDE.md",
     "source_map": "docs/INDEX.md"
   },
