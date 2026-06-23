@@ -6,6 +6,6 @@ Discovery map for project skills under `.agents/skills/`. Each skill's authorita
 
 | Skill | Use when | Path |
 |---|---|---|
-| `multiagent-coordination` | Broad, parallel, repetitive, review-heavy, second-opinion, browser-agent, or shared-runtime work | `.agents/skills/multiagent-coordination/SKILL.md` |
+| `clearroute-multiagent` | Broad, parallel, repetitive, review-heavy, second-opinion, browser-agent, or shared-runtime work | `.agents/skills/clearroute-multiagent/SKILL.md` |
 
 Add domain-specific skills here as the project grows. Keep `AGENTS.md` and `docs/` above skills in the authority order.

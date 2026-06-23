@@ -6,7 +6,7 @@ The kit installs a generic coordination skill, not a ready-made broker runtime. 
 
 ## Runtime Truth
 
-- `multiagent-coordination` works immediately as a decision and packet discipline.
+- `clearroute-multiagent` works immediately as a decision and packet discipline.
 - CLI/browser delegation is not usable until the project selects agents, verifies sign-in/readiness, and wires broker/adapters.
 - The included helper scripts are Windows-first PowerShell.
 - On macOS or Linux, port broker/process/browser/dev-server runtime scripts before declaring multiagent delegation usable.

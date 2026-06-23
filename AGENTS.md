@@ -34,7 +34,7 @@ Choose one profile. `.agents/startup-profiles.json` is the machine-readable sour
 
 For governance/workflow audits without live programme state, use Direct or Cold start plus the relevant governing docs and `.planning/llm-wiki/pages/governance/rules-and-workflows.md`.
 
-Use `.agents/skills/multiagent-coordination/SKILL.md` when the user asks for a panel/multiagent review, a task touches 15+ files, spans 3+ silos, has repeated slices/fanout, or is broad/read-heavy. Stay local for tiny, sensitive, or tightly coupled work. Delegate output is advisory until verified locally.
+Use `.agents/skills/clearroute-multiagent/SKILL.md` when the user asks for a panel/multiagent review, a task touches 15+ files, spans 3+ silos, has repeated slices/fanout, or is broad/read-heavy. Stay local for tiny, sensitive, or tightly coupled work. Delegate output is advisory until verified locally.
 
 ## Source Hierarchy
 

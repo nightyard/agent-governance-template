@@ -21,7 +21,7 @@ Do not create root scratch files for routine work. Use `.planning/` only when pe
 |---|---|
 | Cold start | `.agents/workflows/agent-onboarding.md` |
 | Ambiguous broad goal | `.agents/workflows/gsd-planning.md` |
-| Multi-agent coordination | `.agents/skills/multiagent-coordination/SKILL.md`; `.agents/workflows/multi-agent-loop.md` |
+| Multi-agent coordination | `.agents/skills/clearroute-multiagent/SKILL.md`; `.agents/workflows/multi-agent-loop.md` |
 | Narrow fact/config correction | `.agents/workflows/cascade-fix.md` |
 | Governance/doc cleanup | `docs/AGENT_OPERATING_MODEL.md`, this file, `.planning/friction/README.md` |
 | Friction with a doc/rule/tool | `.planning/friction/README.md` |

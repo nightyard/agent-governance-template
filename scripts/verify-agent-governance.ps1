@@ -132,21 +132,21 @@ if (Test-Path -LiteralPath $agentsPath) {
     }
 }
 
-$multiagentSkillPath = Join-Path $TargetRoot ".agents/skills/multiagent-coordination/SKILL.md"
+$multiagentSkillPath = Join-Path $TargetRoot ".agents/skills/clearroute-multiagent/SKILL.md"
 if (Test-Path -LiteralPath $multiagentSkillPath) {
     $multiagentSkill = Get-Content -Raw -LiteralPath $multiagentSkillPath
     if ($multiagentSkill -notmatch 'Do not include local CLI profiles' -or $multiagentSkill -notmatch 'browser profiles' -or $multiagentSkill -notmatch 'auth caches') {
-        Add-Failure "multiagent-coordination/SKILL.md is missing the auth/cache exclusion policy."
+        Add-Failure "clearroute-multiagent/SKILL.md is missing the auth/cache exclusion policy."
     }
     if ($multiagentSkill -notmatch 'does not bundle a CLI broker' -or $multiagentSkill -notmatch 'Windows-first PowerShell' -or $multiagentSkill -notmatch 'macOS or Linux') {
-        Add-Failure "multiagent-coordination/SKILL.md is missing the generic runtime/porting disclosure."
+        Add-Failure "clearroute-multiagent/SKILL.md is missing the generic runtime/porting disclosure."
     }
     if ($multiagentSkill -notmatch 'multiagent-broker-build') {
-        Add-Failure "multiagent-coordination/SKILL.md should route broker construction through multiagent-broker-build."
+        Add-Failure "clearroute-multiagent/SKILL.md should route broker construction through multiagent-broker-build."
     }
 }
 
-$multiagentEvidencePath = Join-Path $TargetRoot ".agents/skills/multiagent-coordination/references/evidence-packets.md"
+$multiagentEvidencePath = Join-Path $TargetRoot ".agents/skills/clearroute-multiagent/references/evidence-packets.md"
 if (Test-Path -LiteralPath $multiagentEvidencePath) {
     $multiagentEvidence = Get-Content -Raw -LiteralPath $multiagentEvidencePath
     if ($multiagentEvidence -notmatch '## Never Include' -or $multiagentEvidence -notmatch 'auth caches' -or $multiagentEvidence -notmatch 'API keys') {
@@ -154,7 +154,7 @@ if (Test-Path -LiteralPath $multiagentEvidencePath) {
     }
 }
 
-$multiagentRoutingPath = Join-Path $TargetRoot ".agents/skills/multiagent-coordination/references/routing.md"
+$multiagentRoutingPath = Join-Path $TargetRoot ".agents/skills/clearroute-multiagent/references/routing.md"
 if (Test-Path -LiteralPath $multiagentRoutingPath) {
     $multiagentRouting = Get-Content -Raw -LiteralPath $multiagentRoutingPath
     if ($multiagentRouting -notmatch 'Do not route credential' -or $multiagentRouting -notmatch 'auth-cache' -or $multiagentRouting -notmatch 'browser-profile') {

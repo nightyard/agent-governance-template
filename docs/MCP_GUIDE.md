@@ -21,4 +21,4 @@ Use local repo evidence first. MCP servers and external tools are task-specific 
 | Current public/API facts | Official docs or primary source |
 | Browser proof | Local browser automation or screenshots |
 | Spreadsheet/doc/slides | Installed connector or local parser |
-| Multi-agent review | `.agents/skills/multiagent-coordination/SKILL.md` |
+| Multi-agent review | `.agents/skills/clearroute-multiagent/SKILL.md` |

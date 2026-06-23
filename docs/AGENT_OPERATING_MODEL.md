@@ -21,7 +21,7 @@ This document defines how AI agents should operate in this repository. It is too
 | Read-only | review docs, explain code, recommend changes | No spec. Read relevant docs and report findings. |
 | Small change | one narrow edit to copy, config, component, or code | No formal spec. State scope and verification. |
 | Governance/doc cleanup | workflow pruning, stale references, agent rules, wiki maintenance | No formal spec. Run targeted readback/search and any local governance checks. |
-| Orchestrated/delegated work | large goal, repeated slices, multi-model review | Use `.agents/skills/multiagent-coordination/SKILL.md`. Delegates receive bounded packets and remain advisory. |
+| Orchestrated/delegated work | large goal, repeated slices, multi-model review | Use `.agents/skills/clearroute-multiagent/SKILL.md`. Delegates receive bounded packets and remain advisory. |
 | Multi-file source work | feature, route, migration, shared behavior change | Task spec under `.planning/<task-slug>_SPEC.md` with `Status: FINALIZED`. |
 | Audit or migration wave | repeated audits, large content or code migrations | Use a task spec and stop after one coherent wave. |
 | Risky/domain-gated work | production, data, auth, billing, compliance, security, migrations | Classify from `docs/DOMAIN_GATES.md` before editing. |
@@ -34,7 +34,7 @@ This document defines how AI agents should operate in this repository. It is too
 4. For broad or unfamiliar current-state work, read `.planning/ACTIVE_CONTEXT_STATE.json` first. Open `.planning/ACTIVE_CONTEXT.md` only when detail is needed. Use `.planning/llm-wiki/index.md` only for source discovery.
 5. Search the relevant domain doc before opening it.
 6. For code, inspect imports, types, tests, and nearest working examples before editing.
-7. For delegated work, read `.agents/skills/multiagent-coordination/SKILL.md`.
+7. For delegated work, read `.agents/skills/clearroute-multiagent/SKILL.md`.
 8. For long-running or parallel work, use the installed checkpoint and write-scope helpers where available.
 
 Do not load large docs in full unless the task genuinely needs the whole file.

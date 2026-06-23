@@ -1,9 +1,9 @@
 ---
-name: multiagent-coordination
+name: clearroute-multiagent
 description: Generic multi-agent routing and packet discipline for broad, parallel, repetitive, review-heavy, or second-opinion work. Codex or the primary IDE agent remains final editor and verifier.
 ---
 
-# Multiagent Coordination
+# ClearRoute Multiagent
 
 Use this when delegation is cheaper than loading and reasoning through everything inline. Delegates are advisory until checked against local sources.
 

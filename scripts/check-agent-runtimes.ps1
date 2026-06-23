@@ -193,7 +193,7 @@ $report = [ordered]@{
         macosOrLinuxPortRequiredBeforeBrokerUse = ($osName -ne "windows")
     }
     runtimeStatus = [ordered]@{
-        coordinationSkill = "installed_when_.agents/skills/multiagent-coordination_exists"
+        coordinationSkill = "installed_when_.agents/skills/clearroute-multiagent_exists"
         brokerScriptsBundled = $false
         cliBrowserDelegationUsable = if ($osName -eq "windows") { "only_after_selected_agents_and_project_brokers_are_configured" } else { "no_port_runtime_first" }
     }
